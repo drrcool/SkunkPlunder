@@ -1,0 +1,8 @@
+## Interface: 60100
+## Title: SkunkPlunder
+## Notes: Loot addon for Skunkworks
+## Author: arthureld (Is this my tag on Curse)
+## SavedVariablesPerCharacter: SkunkPlunder_History
+
+SkunkPlunder.lua
+SkunkPlunder.xml

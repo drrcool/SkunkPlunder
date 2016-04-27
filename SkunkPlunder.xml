@@ -1,0 +1,119 @@
+<Ui>
+    <!-- EnableMouse allows us to retrieve events from the mouse.
+         Moveable makes the frame movable. -->
+    <Frame name='SkunkPlunder_MainFrame' parent="UIParent"
+         enableMouse="true"
+         moveable="true">
+        <Size>
+            <AbsDimension x="160" y="120" />
+        </Size>
+        <Anchors>
+            <Anchor point='CENTER' />
+        </Anchors>
+        <Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background"
+                  edgeFile="Interface\Tooltips\UI-Tooltip-Border"
+                  tile="true">
+            <!-- Border thickness -->
+            <EdgeSize>
+                <AbsValue val="16" />
+            </EdgeSize>
+
+            <!-- Scale the background to keep it from showing up outside the borders -->
+            <BackgroundInsets>
+                <AbsInset left="4" right="3" top="4" bottom="3" />
+            </BackgroundInsets>
+
+            <!-- Change the background color -->
+            <Color r="0.2" g="0.2" b="0.2" a="0.7" />
+
+            <!-- Tile size sets the tiling for the background bgFile -->
+            <TileSize>
+                <AbsValue val="16" />
+            </TileSize>
+
+
+        </Backdrop>
+
+        <!-- Create the Frames taht live inside the bigger Frame -->
+        <Frames>
+            <Button name="$parent_Button">
+                <Size>
+                    <AbsDimension x="15" y="15" />
+                </Size>
+                <Anchors>
+                    <Anchor point='TOPLEFT'>
+                        <Offset>
+                            <AbsDimension x="3" y="-3" />
+                        </Offset>
+                    </Anchor>
+                </Anchors>
+                <NormalTexture file="Interface\Minimap\TRACKING\OBJECTIONS">
+                    <TexCoords left="0" right="0.125" top="0" bottom="0.5" />
+                </NormalTexture>
+                <HighlightTexture file="Interface\Minimap\TRACKING\OBJECTIONS">
+                    <TexCoords left="0.125" right="0.25" top="0" bottom="0.5" />
+                </HighlightTexture>
+            </Button>
+        </Frames>
+
+        <!-- Layers overwrite each other -->
+        <Layers>
+            <!-- Artwork is the middle entry -->
+            <Layer level='ARTWORK'>
+                <!-- Create a font string for example to show gold amount -->
+                <FontString name='$parent_GoldString'
+                            inherits="SystemFont_Small"
+                            text="0"
+                            justifyV="TOP"
+                            justifyH="RIGHT">
+                    <Size>
+                        <AbsDimension x="0" y="10" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT">
+                            <Offset>
+                                <AbsDimension x="20" y="-5" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                    <Color r="1" b="1" g="1" />
+                </FontString>
+                <Texture name="$parent_GoldTex"
+                         file="Interface\MoneyFrame\UI-GoldIcon">
+                    <Size>
+                        <AbsDimension x="10" y="10" />
+                    </Size>
+                    <Anchors>
+                        <Anchor point="TOPLEFT"
+                                relativeTo="$parent_GoldString"
+                                relativePoint="TOPRIGHT">
+                            <Offset>
+                                <AbsDimension x="2" y="0" />
+                            </Offset>
+                        </Anchor>
+                    </Anchors>
+                </Texture>
+
+            </Layer>
+        </Layers>
+
+        <!-- Scripts contain the event handlers -->
+        <Scripts>
+            <OnLoad>
+                SkunkPlunder_OnLoad()
+            </OnLoad>
+
+            <OnEvent>
+                SkunkPlunder_OnEvent()
+            </OnEvent>
+            
+            <OnMouseDown>
+                SkunkPlunder_OnMouseDown()
+            </OnMouseDown>
+
+            <OnMouseUp>
+                SkunkPlunder_OnMouseUp()
+            </OnMouseUp>
+        </Scripts>
+    </Frame>
+</Ui>
