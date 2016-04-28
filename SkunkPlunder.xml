@@ -1,17 +1,17 @@
-<Ui>
+<Ui xmlns="http://www.blizzard.com/wow/ui/"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <!-- EnableMouse allows us to retrieve events from the mouse.
          Moveable makes the frame movable. -->
     <Frame name='SkunkPlunder_MainFrame' parent="UIParent"
          enableMouse="true"
          moveable="true">
         <Size>
-            <AbsDimension x="160" y="120" />
+            <AbsDimension x="300" y="120" />
         </Size>
         <Anchors>
             <Anchor point='CENTER' />
         </Anchors>
-        <Backdrop bgFile="Interface\Tooltips\UI-Tooltip-Background"
-                  edgeFile="Interface\Tooltips\UI-Tooltip-Border"
+        <Backdrop bgFile="Interface\Addons\SkunkPlunder\media\Minimalist"
                   tile="true">
             <!-- Border thickness -->
             <EdgeSize>
@@ -24,7 +24,7 @@
             </BackgroundInsets>
 
             <!-- Change the background color -->
-            <Color r="0.2" g="0.2" b="0.2" a="0.7" />
+            <Color r="0.0" g="0.0" b="0.0" a="1.0" />
 
             <!-- Tile size sets the tiling for the background bgFile -->
             <TileSize>
@@ -34,67 +34,211 @@
 
         </Backdrop>
 
-        <!-- Create the Frames taht live inside the bigger Frame -->
+        <Font name="buttonFontNormal" font="Fonts\ARIALN.TTF" virtual="true">
+            <FontHeight>
+                <AbsValue val="6" />
+            </FontHeight>
+            <Color r="0.0" g="0.0" b="0.0" />
+
+        </Font>
+
         <Frames>
-            <Button name="$parent_Button">
+            <Button name="$parent_mainspec_button"
+                    text="MainSpec">
                 <Size>
-                    <AbsDimension x="15" y="15" />
+                    <AbsDimension x="100" y="25" />
+                </Size>
+
+                <NormalTexture file="Interface\Addons\SkunkPlunder\media\Minimalist">
+                    <Color r="0.2" g="0.2" b="0.2" a="0.8" />
+                </NormalTexture>
+                <HighlightTexture file="Interface\Addons\SkunkPlunder\media\Minimalist">
+                    <Color r="1.0" g="1.0" b="1.0" a="0.1" />
+                </HighlightTexture>
+
+                <NormalFont style='GameFontNormal' />
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset x="80" y="-10" />
+                    </Anchor>
+                </Anchors>
+            </Button>
+
+            <Button name="$parent_minorupgrade_button"
+                    text="Minor Upgrade">
+                <Size>
+                    <AbsDimension x="100" y="25" />
+                </Size>
+
+                <NormalTexture file="Interface\Addons\SkunkPlunder\media\Minimalist">
+                    <Color r="0.2" g="0.2" b="0.2" a="0.8" />
+                </NormalTexture>
+                <HighlightTexture file="Interface\Addons\SkunkPlunder\media\Minimalist">
+                    <Color r="1.0" g="1.0" b="1.0" a="0.1" />
+                </HighlightTexture>
+
+                <NormalFont style='GameFontNormal' />
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset x="80" y="-35" />
+                    </Anchor>
+                </Anchors>
+            </Button>
+
+            <Button name="$parent_mainspec_button"
+                    text="Better Secondary">
+                <Size>
+                    <AbsDimension x="100" y="25" />
+                </Size>
+
+                <NormalTexture file="Interface\Addons\SkunkPlunder\media\Minimalist">
+                    <Color r="0.2" g="0.2" b="0.2" a="0.8" />
+                </NormalTexture>
+                <HighlightTexture file="Interface\Addons\SkunkPlunder\media\Minimalist">
+                    <Color r="1.0" g="1.0" b="1.0" a="0.1" />
+                </HighlightTexture>
+
+                <NormalFont style='GameFontNormal' />
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset x="80" y="-60" />
+                    </Anchor>
+                </Anchors>
+            </Button>
+
+            <Button name="$parent_setbonus_button"
+                    text="Grants Set Bonus">
+                <Size>
+                    <AbsDimension x="100" y="25" />
+                </Size>
+
+                <NormalTexture file="Interface\Addons\SkunkPlunder\media\Minimalist">
+                    <Color r="0.2" g="0.2" b="0.2" a="0.8" />
+                </NormalTexture>
+                <HighlightTexture file="Interface\Addons\SkunkPlunder\media\Minimalist">
+                    <Color r="1.0" g="1.0" b="1.0" a="0.1" />
+                </HighlightTexture>
+
+                <NormalFont style='GameFontNormal' />
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset x="190" y="-10" />
+                    </Anchor>
+                </Anchors>
+            </Button>
+
+            <Button name="$parent_offspec_button"
+                    text="OffSpec">
+                <Size>
+                    <AbsDimension x="100" y="25" />
+                </Size>
+
+                <NormalTexture file="Interface\Addons\SkunkPlunder\media\Minimalist">
+                    <Color r="0.2" g="0.2" b="0.2" a="0.8" />
+                </NormalTexture>
+                <HighlightTexture file="Interface\Addons\SkunkPlunder\media\Minimalist">
+                    <Color r="1.0" g="1.0" b="1.0" a="0.1" />
+                </HighlightTexture>
+
+                <NormalFont style='GameFontNormal' />
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset x="190" y="-35" />
+                    </Anchor>
+                </Anchors>
+            </Button>
+
+            <Button name="$parent_transmog_button"
+                    text="Transmog">
+                <Size>
+                    <AbsDimension x="100" y="25" />
+                </Size>
+
+                <NormalTexture file="Interface\Addons\SkunkPlunder\media\Minimalist">
+                    <Color r="0.2" g="0.2" b="0.2" a="0.8" />
+                </NormalTexture>
+                <HighlightTexture file="Interface\Addons\SkunkPlunder\media\Minimalist">
+                    <Color r="1.0" g="1.0" b="1.0" a="0.1" />
+                </HighlightTexture>
+
+                <NormalFont style='GameFontNormal' />
+                <Anchors>
+                    <Anchor point="TOPLEFT">
+                        <Offset x="190" y="-60" />
+                    </Anchor>
+                </Anchors>
+            </Button>
+
+            <Button name="$parent_pass"
+                    text="Pass">
+                <Size>
+                    <AbsDimension x="140" y="20" />
                 </Size>
                 <Anchors>
                     <Anchor point='TOPLEFT'>
-                        <Offset>
-                            <AbsDimension x="3" y="-3" />
-                        </Offset>
+                        <Offset x="150" y="-90" />
                     </Anchor>
                 </Anchors>
-                <NormalTexture file="Interface\Minimap\TRACKING\OBJECTIONS">
-                    <TexCoords left="0" right="0.125" top="0" bottom="0.5" />
+                <NormalFont style='GameFontNormal' />
+                <NormalTexture file='Interface\Addons\SkunkPlunder\media\Minimalist'>
+                    <Color r="0.2" g="0.2" b="0.2" a="0.8" />
                 </NormalTexture>
-                <HighlightTexture file="Interface\Minimap\TRACKING\OBJECTIONS">
-                    <TexCoords left="0.125" right="0.25" top="0" bottom="0.5" />
+                <HighlightTexture file="Interface\Addons\SkunkPlunder\media\Minimalist">
+                    <Color r="1.0" g="1.0" b="1.0" a="0.1" />
                 </HighlightTexture>
             </Button>
+
+
         </Frames>
 
-        <!-- Layers overwrite each other -->
         <Layers>
-            <!-- Artwork is the middle entry -->
-            <Layer level='ARTWORK'>
-                <!-- Create a font string for example to show gold amount -->
-                <FontString name='$parent_GoldString'
-                            inherits="SystemFont_Small"
-                            text="0"
-                            justifyV="TOP"
-                            justifyH="RIGHT">
+            <!-- Item Icon -->
+            <Layer>
+                <Texture name="$parentObjectIcon"
+                         file="Interface\ICONS\INV_Misc_Gift_03">
                     <Size>
-                        <AbsDimension x="0" y="10" />
+                        <AbsDimension x="70" y="70" />
                     </Size>
+
                     <Anchors>
                         <Anchor point="TOPLEFT">
-                            <Offset>
-                                <AbsDimension x="20" y="-5" />
-                            </Offset>
-                        </Anchor>
-                    </Anchors>
-                    <Color r="1" b="1" g="1" />
-                </FontString>
-                <Texture name="$parent_GoldTex"
-                         file="Interface\MoneyFrame\UI-GoldIcon">
-                    <Size>
-                        <AbsDimension x="10" y="10" />
-                    </Size>
-                    <Anchors>
-                        <Anchor point="TOPLEFT"
-                                relativeTo="$parent_GoldString"
-                                relativePoint="TOPRIGHT">
-                            <Offset>
-                                <AbsDimension x="2" y="0" />
-                            </Offset>
+                            <Offset x="12" y="-13" />
                         </Anchor>
                     </Anchors>
                 </Texture>
-
             </Layer>
+
+            <!-- Link for the Item -->
+            <Layer level="ARTWORK">
+                <!-- Link for the object -->
+                <FontString  name="$parentObjectLink"
+                             inherits="GameFontNormalLarge"
+                             text="[Test Link]"
+                             justifyH="LEFT">
+                    <Anchors>
+                        <Anchor point="TOP"
+                                relativeto="$parentObjectIcon"
+                                relativePoint="BOTTOM">
+                            <Offset x="1" y="-10" />
+                        </Anchor>
+                    </Anchors>
+                    <Color r="0.5" g="0.0" b="0.5" />
+                </FontString>
+                <!-- With all the ilvl variations, list it directly -->
+                <FontString name="$parentObjectiLvl"
+                            inherits="GameFontNormal"
+                            font="Fonts\ARIALN.TTF"
+                            text="ilvl: 1337">
+                    <Anchors>
+                        <Anchor points="LEFT"
+                                relativeto="$parentObjectLink"
+                                relativePoint="RIGHT"
+                                x="5"
+                                y="5" />
+                    </Anchors>
+                </FontString>
+            </Layer>
+
         </Layers>
 
         <!-- Scripts contain the event handlers -->
@@ -106,7 +250,7 @@
             <OnEvent>
                 SkunkPlunder_OnEvent()
             </OnEvent>
-            
+
             <OnMouseDown>
                 SkunkPlunder_OnMouseDown()
             </OnMouseDown>

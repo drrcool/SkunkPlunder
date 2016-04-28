@@ -4,5 +4,6 @@
 ## Author: arthureld (Is this my tag on Curse)
 ## SavedVariablesPerCharacter: SkunkPlunder_History
 
+
 SkunkPlunder.lua
 SkunkPlunder.xml

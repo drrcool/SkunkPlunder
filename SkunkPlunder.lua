@@ -1,4 +1,5 @@
 -- Initialize
+
 SkunkPlunder_LastMoney = 0
 SkunkPlunder_MadeProfit = false
 SkunkPlunder_History = {}
@@ -19,13 +20,6 @@ function SkunkPlunder_OnMouseUp()
     SkunkPlunder_MainFrame:StopMovingOrSizing()
 end
 
--- Handle the size changing
-function SkunkPlunder_ChangeSize()
-    local width = 65
-    width = width + SkunkPlunder_MainFrame_GoldString:GetStringWidth()
-
-    SkunkPlunder_MainFrame:SetWidth(width)
-end
 
 -- What to do when one of our events firest
 function SkunkPlunder_OnEvent()
